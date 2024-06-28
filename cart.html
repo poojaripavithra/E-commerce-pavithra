@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - AR VR WORLD</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    h2 {
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    /* Navbar Styles */
+    #navbar {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    #navbar li {
+        float: left;
+    }
+    
+    #navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    #navbar li a:hover, .active {
+        background-color: #111;
+    }
+    
+    /* Cart Section Styles */
+    #cart.section-p1 {
+        padding: 20px;
+        background-color: #fff;
+        margin: 20px auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        width: 80%;
+    }
+    
+    #cartTable {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #cartTable th, #cartTable td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    #cartTable th {
+        background-color: #f2f2f2;
+    }
+    
+    #cart button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #f8a488;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        font-size: 16px;
+    }
+    
+    #cart button:hover {
+        background-color: #f18973;
+    }
+    
+    /* Cart Items Styles */
+    .cart-container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+    }
+    
+    .cart-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+    
+    .cart-header div {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+    }
+    
+    .cart-item img {
+        width: 100px;
+    }
+    
+    .cart-item div {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .cart-total {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+    
+    .cart-total div {
+        margin-left: 20px;
+        text-align: right;
+    }
+    
+    .cart-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    .cart-buttons button {
+        padding: 10px 20px;
+        background-color: #f8a488;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .cart-buttons button:hover {
+        background-color: #f18973;
+    }
+    
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        padding-top: 60px;
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .modal-content input {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .modal-content button {
+        width: 100%;
+        padding: 10px;
+        background-color: #f8a488;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: white;
+        font-size: 16px;
+    }
+    
+    .modal-content button:hover {
+        background-color: #f18973;
+    }
+  </style>
+</head>
+<body>
+    <div>
+        <ul id="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Product.html">Shop</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="cart.html"><i class="far fa-shopping-bag"></i></a></li>
+        </ul>
+    </div>
+    
+    <section id="cart" class="section-p1">
+        <h2>Your Cart</h2>
+        <table id="cartTable">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </table>
+        <button onclick="showPaymentModal()">Proceed to Pay</button>
+        <button onclick="clearCart()">Clear Cart</button>
+    </section>
+
+    <!-- The Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h2>Enter Card Details</h2>
+            <input type="text" id="cardNumber" placeholder="Card Number">
+            <input type="text" id="cardExpiry" placeholder="Expiry Date (MM/YY)">
+            <input type="text" id="cardCVC" placeholder="CVC">
+            <button onclick="submitPayment()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartTable = document.getElementById('cartTable');
+            
+            cart.forEach(item => {
+                let row = cartTable.insertRow();
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                cell1.innerHTML = item.name;
+                cell2.innerHTML = `₹${item.price}`;
+            });
+        }
+        
+        function clearCart() {
+            localStorage.removeItem('cart');
+            location.reload();
+        }
+
+        function showPaymentModal() {
+            document.getElementById('paymentModal').style.display = 'block';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function submitPayment() {
+            let cardNumber = document.getElementById('cardNumber').value;
+            let cardExpiry = document.getElementById('cardExpiry').value;
+            let cardCVC = document.getElementById('cardCVC').value;
+
+        
+
+            alert('Payment submitted!');
+            closePaymentModal();
+            clearCart();
+        }
+        
+        window.onload = loadCart;
+        
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('paymentModal')) {
+                closePaymentModal();
+            }
+        }
+    </script>
+</body>
+</html>
