@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - AR VR WORLD</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    .cart-container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+    }
+    .cart-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+    .cart-header div {
+        flex: 1;
+        text-align: center;
+    }
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+    }
+    .cart-item img {
+        width: 100px;
+    }
+    .cart-item div {
+        flex: 1;
+        text-align: center;
+    }
+    .cart-total {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+    .cart-total div {
+        margin-left: 20px;
+        text-align: right;
+    }
+    .cart-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    .cart-buttons button {
+        padding: 10px 20px;
+        background-color: #f8a488;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .cart-buttons button:hover {
+        background-color: #f18973;
+    }
+	
+  </style>
+</head>
+<body>
+  
+
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <div class="cart-header">
+      <div>Product</div>
+      <div>Price</div>
+      <div>Quantity</div>
+      <div>Total</div>
+    </div>
+    <div id="cart-items">
+    
+    </div>
+    <div class="cart-total">
+      <div>
+        <h3>Total: $<span id="total-price">0.00</span></h3>
+      </div>
+    </div>
+    <div class="cart-buttons">
+      <button onclick="checkout()">Proceed to Checkout</button>
+      <button onclick="clearCart()">Clear Cart</button>
+	  <button ><a href="Product.html">Back to Shopping</button
+	  
+    </div>
+  </div>
+
+  <script>
+  <script>
+  function backToShopping() {
+    window.location.href = 'indexe.html';
+  }
+
+  let cart = [];
+
+  function addToCart(name, price) {
+    let item = cart.find(item => item.name === name);
+    if (item) {
+      item.quantity++;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+    updateCart();
+  }
+
+  function updateCart() {
+    let cartItems = document.getElementById('cart-items');
+    if (!cartItems) {
+      cartItems = document.createElement('div');
+      cartItems.id = 'cart-items';
+      document.body.appendChild(cartItems);
+    }
+    cartItems.innerHTML = '<h2>Cart</h2>';
+    cart.forEach(item => {
+      cartItems.innerHTML += `<p>${item.name} - ${item.quantity} x ₹${item.price}</p>`;
+    });
+  }
+
+  function checkout() {
+    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    alert('Total Amount: ₹' + total);
+  }
+
+  function clearCart() {
+    cart = [];
+    updateCart();
+  }
+</script>
+
+  </script>
+</body>
+</html>
