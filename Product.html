@@ -232,6 +232,22 @@ h1,h2,h4{
   background-position: center;
   
   }
+  #sm-banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Ensure no wrapping of items */
+}
+
+#sm-banner .banner-box {
+    flex: 1;
+    margin: 20px;
+}
+
+#sm-banner .banner-box2 {
+    flex: 1;
+    margin: 20px;
+}
+
 #banner h4 {
 color: #fff;
 font-size: 16px;
@@ -631,15 +647,51 @@ padding: 10px 0;
   </section>
  
     
-    <script>
-         function addToCart(productName, productPrice) {
-            alert(`${productName} has been added to the cart at ₹${productPrice}`);
-            
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ name: productName, price: productPrice });
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }
-  </script>
+   <script>
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+function addToCart(productName, productPrice) {
+   
+    let product = {
+        name: productName,
+        price: productPrice,
+        quantity: 1
+    };
+    
+
+    let productExists = cart.find(item => item.name === productName);
+    if (productExists) {
+        productExists.quantity += 1;
+    } else {
+        cart.push(product);
+    }
+
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+  
+    alert(`${productName} has been added to your cart!`);
+}
+
+
+function displayCartItems() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartItemsContainer = document.getElementById('cart-items');
+    
+    cartItemsContainer.innerHTML = ''; 
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
+    } else {
+        cart.forEach(item => {
+            cartItemsContainer.innerHTML += `<p>${item.name} - ₹${item.price} x ${item.quantity}</p>`;
+        });
+    }
+}
+</script>
+
  
 </body>
 </html>
