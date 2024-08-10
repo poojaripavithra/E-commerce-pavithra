@@ -7,317 +7,310 @@
   <title>AR VR WORLD</title>
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 <style>
-body{
-  width: 100%;
-}
-button.normal {
-  font-size: 14px;
-  font-weight: 600;
-  padding: 15px 30px;
-  color: #000;
-  background-color:#fff;
-  border-radius: 4px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  transition: 0.25;
-}
-
-#navbar {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding-bottom: none;
+body{ 
+  width: 100%; 
+} 
+button.normal { 
+  font-size: 14px; 
+  font-weight: 600; 
+  padding: 15px 30px; 
+  color: #000; 
+  background-color:#fff; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  border: none; 
+  outline: none; 
+  transition: 0.25; 
+} 
  
+#navbar { 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  padding-bottom: none; 
   
-}
-#navbar .logo img{
-  justify-content: left;
-  position:sticky;
-}
-
-#navbar li{
-  list-style: none;
-  padding:0 20px;
-}
-#navbar li a{
-  text-decoration: none;
-  font-size:20px;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-#navbar li a:hover,
-#navbar li a.active{
-  color: #088178;
-}
-
-h2{
-  color: rgba(107, 70, 114, 0.97);
-  font-style: italic;
-  font-size: 50px;
-}
-#hero{
-  background-image: url("https://viso.ai/wp-content/uploads/2024/01/Virtual-Reality-Headset.png");
-  height: 90vh;
-  width: 90%;
-  background-size: cover;
-  background-position: top 25% right 0;
-  padding: 0 80px;
-  display: flex;
-  align-items: flex-start;
-  flex-direction:column ;
-  justify-content: center;
-  
-}
-.section-p1{
-  padding:40px 80px;
-}
-
-#hero h1{
-  color: rgb(107, 59, 218);
-  font-style: oblique;
-  font-size: 33px;
-
-}
-h1,h2,h4{
-  margin-top: 3px;
-  margin-bottom: 0px;
-}
-#hero button{
-  color: #063f1d;
-  border: 0;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 20px;
-  font-style:oblique;
-}
-#hero button:hover {
-  display: block;
-  filter: drop-shadow(0 0 10px #fffdef);
-}
-
-
-#feature .fe-box {
-  width: 180px;
-  text-align: center;
-  padding: 25px 15px;
-  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
-  border: 1px solid #2389a5;
-  
-}
-#feature .fe-box:hover{
-  box-shadow: 10px 10px 54px rgb(107, 59, 218);
-}
-#feature .fe-box img{
-  width: 100%;
-  margin-bottom: 10px;
-}
-#feature .fe-box h6{
-  padding: 9px 8px 6px 8px;
-  line-height: 1;
-  color: #f7f5f7;
-  background-color: rgb(134, 32, 127);
-}
-#feature{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#feature .fe-box:nth-child(2) h6{
-  background-color: #2389a5;
-}
-#feature .fe-box:nth-child(3) h6{
-  background-color: #23a568;
-}
-#feature .fe-box:nth-child(4) h6{
-  background-color: #4623a5;
-}
-#feature .fe-box:nth-child(5) h6{
-  background-color: #a57123;
-}
-#feature .fe-box:nth-child(6) h6{
-  background-color: #a53423;
-}
-#product1 {
-  text-align: center;
-  }
-#product1 .pro-container {
-      display: flex;
-      justify-content: space-between;
-      padding-top: 20px;
-      flex-wrap: wrap;
-      }
-  
-#product1 .pro {
-  width: 23%;
-  min-width: 250px;
-  padding: 10px 12px;
-  border: 1px solid #cce7d0;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 20px 20px 30px rgb(107, 59, 218);
-  margin: 15px 0;
-  transition: 0.2s ease;
-  position: relative;
-  }
-#product .pro:hover{
-      box-shadow: 20px 20px 30px rgb(107, 59, 218);
-  }
-
-  
-#product1 .pro img {
-  width: 100%;
-  border-radius: 20px;
-  object-fit: cover;
-
-  }
-#product1 .pro .des {
-      text-align: center;
-      padding: 10px 0;
-  }
-#product1 .pro .des span {
-      color: #606063;
-      font-size: 12px;
-  }
-#product1.pro.des h5 {
-      padding-top: 7px;
-      color: #lalala;
-      font-size: 14px;
-}
-      
-#product1 .pro .des i {
-      font-size: 12px;
-      color: rgb(243, 181, 25);
-      
-  }
-      
-#product1 .pro .des h4{
-      padding-top: 7px;
-      font-size: 15px;
-      font-weight: 700;
-      color: #23a568;
-      
-      }
-#product1 .pro .cart{
-          width: 40px;
-          height: 40px;
-          line-height: 40px;
-          border-radius: 50px;
-          background-color:#f9f9fa;
-          font-weight: 500;
-          color: rgb(23, 36, 214);
-          border: 1px solid #cce7d0;
-          position: absolute;
-          bottom: 20px;
-          right: 10px;
-      }
-
-.section-m1{
-  margin: 40px 0;
-
-
-}
-#banner {
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-image: url("https://builtin.com/sites/www.builtin.com/files/2023-06/virtual-reality-companies.jpg");
-  width: 100%;
-  height: 48vh;
-  background-size: cover;
-  background-position: center;
-  
-  }
-  #sm-banner {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap; /* Ensure no wrapping of items */
-}
-
-#sm-banner .banner-box {
-    flex: 1;
-    margin: 20px;
-}
-
-#sm-banner .banner-box2 {
-    flex: 1;
-    margin: 20px;
-}
-
-#banner h4 {
-color: #fff;
-font-size: 16px;
-}
-
-#banner h2 {
-color:#fff;
-font-size: 30px;
-padding: 10px 0;
-}
-#banner h2 span{
-  color:#cf0c0c;
-
-}
-#banner button:hover{
-  background: #088178;
-  color: #fcfdfc;
-}
-
-#sm-banner {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  }
-  
-  #sm-banner .banner-box{ 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  background-image: url("https://cdn.pixabay.com/photo/2022/10/04/21/25/pink-7499159_1280.jpg");
-  min-width: 580px;
-  height: 58vh;
-  background-size: cover;
-  background-position: center;
-  padding: 30px;
-}
-#sm-banner .banner-box2{
-  background-image: url("https://i.pinimg.com/originals/2b/f5/79/2bf579b22bd79aa8a8113f35fc626a6c.jpg");
-}
-#sm-banner h4{
-  color: #d00eda;
-  font-size: 20px;
-  font-weight: 300;
-
-}
-#sm-banner h2{
-  color: #ede9ed;
-  font-size: 60px;
-  font-weight: 300;
-  font-style: italic;
-
-}
-#sm-banner .banner-box2 h2{
-  color: #580abe;
-  font-size: 60px;
-  font-weight: 300;
-  font-style: italic;
-}
-#sm-banner span{
-  color: #d00eda;
-  font-size: 14px;
-  font-weight: 500;
-  padding-bottom: 15px;
-}
-
-
-
-
-  
+   
+} 
+#navbar .logo img{ 
+  justify-content: left; 
+  position:sticky; 
+} 
+ 
+#navbar li{ 
+  list-style: none; 
+  padding:0 20px; 
+} 
+#navbar li a{ 
+  text-decoration: none; 
+  font-size:20px; 
+  font-weight: 600; 
+  color: #1a1a1a; 
+} 
+#navbar li a:hover, 
+#navbar li a.active{ 
+  color: #088178; 
+} 
+ 
+h2{ 
+  color: rgba(107, 70, 114, 0.97); 
+  font-style: italic; 
+  font-size: 50px; 
+} 
+#hero{ 
+  background-image: url("https://viso.ai/wp-content/uploads/2024/01/Virtual-Reality-Headset.png"); 
+  height: 90vh; 
+  width: 90%; 
+  background-size: cover; 
+  background-position: top 25% right 0; 
+  padding: 0 80px; 
+  display: flex; 
+  align-items: flex-start; 
+  flex-direction: column ; 
+  justify-content: center; 
+   
+} 
+.section-p1{ 
+  padding: 40px 80px; 
+} 
+ 
+#hero h1{ 
+  color: rgb(107, 59, 218); 
+  font-style: oblique; 
+  font-size: 33px; 
+ 
+} 
+h1,h2,h4{ 
+  margin-top: 3px; 
+  margin-bottom: 0px; 
+} 
+#hero button{ 
+  color: #063f1d; 
+  border: 0; 
+  background-repeat: no-repeat; 
+  cursor: pointer; 
+  font-weight: 700; 
+  font-size: 20px; 
+  font-style:oblique; 
+} 
+#hero button:hover { 
+  display: block; 
+  filter: drop-shadow(0 0 10px #fffdef); 
+} 
+ 
+#feature .fe-box { 
+  width: 180px; 
+  text-align: center; 
+  padding: 25px 15px; 
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03); 
+  border: 1px solid #2389a5; 
+   
+} 
+#feature .fe-box:hover{ 
+  box-shadow: 10px 10px 54px rgb(107, 59, 218); 
+} 
+#feature .fe-box img{ 
+  width: 100%; 
+  margin-bottom: 10px; 
+} 
+#feature .fe-box h6{ 
+  padding: 9px 8px 6px 8px; 
+  line-height: 1; 
+  color: #f7f5f7; 
+  background-color: rgb(134, 32, 127); 
+} 
+#feature{ 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+} 
+#feature .fe-box:nth-child(2) h6{ 
+  background-color: #2389a5; 
+} 
+#feature .fe-box:nth-child(3) h6{ 
+  background-color: #23a568; 
+} 
+#feature .fe-box:nth-child(4) h6{ 
+  background-color: #4623a5; 
+} 
+#feature .fe-box:nth-child(5) h6{ 
+  background-color: #a57123; 
+} 
+#feature .fe-box:nth-child(6) h6{ 
+  background-color: #a53423; 
+} 
+#product1 { 
+  text-align: center; 
+  } 
+#product1 .pro-container { 
+      display: flex; 
+      justify-content: space-between; 
+      padding-top: 20px; 
+      flex-wrap: wrap; 
+      } 
+   
+#product1 .pro { 
+  width: 23%; 
+  min-width: 250px; 
+  padding: 10px 12px; 
+  border: 1px solid #cce7d0; 
+  border-radius: 25px; 
+  cursor: pointer; 
+  box-shadow: 20px 20px 30px rgb(107, 59, 218); 
+  margin: 15px 0; 
+  transition: 0.2s ease; 
+  position: relative; 
+  } 
+#product .pro:hover{ 
+      box-shadow: 20px 20px 30px rgb(107, 59, 218); 
+  } 
+ 
+   
+#product1 .pro img { 
+  width: 100%; 
+  border-radius: 20px; 
+  object-fit: cover; 
+ 
+  } 
+#product1 .pro .des { 
+      text-align: center; 
+      padding: 10px 0; 
+  } 
+#product1 .pro .des span { 
+      color: #606063; 
+      font-size: 12px; 
+  } 
+#product1.pro.des h5 { 
+      padding-top: 7px; 
+      color: #lalala; 
+      font-size: 14px; 
+} 
+       
+#product1 .pro .des i { 
+      font-size: 12px; 
+      color: rgb(243, 181, 25); 
+       
+  } 
+       
+#product1 .pro .des h4{ 
+      padding-top: 7px; 
+      font-size: 15px; 
+      font-weight: 700; 
+      color: #23a568; 
+       
+      } 
+#product1 .pro .cart{ 
+          width: 40px; 
+          height: 40px; 
+          line-height: 40px; 
+          border-radius: 50px; 
+          background-color:#f9f9fa; 
+          font-weight: 500; 
+          color: rgb(23, 36, 214); 
+          border: 1px solid #cce7d0; 
+          position: absolute; 
+          bottom: 20px; 
+          right: 10px; 
+      } 
+ 
+ 
+#banner { 
+ 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  background-image: url("https://builtin.com/sites/www.builtin.com/files/2023-06/virtual-reality-companies.jpg"); 
+  width: 100%; 
+  height: 48vh; 
+  background-size: cover; 
+  background-position: center; 
+   
+  } 
+#banner h4 { 
+color: #fff; 
+font-size: 16px; 
+} 
+ 
+#banner h2 { 
+color:#fff; 
+font-size: 30px; 
+padding: 10px 0; 
+} 
+#banner h2 span{ 
+  color:#cf0c0c; 
+ 
+} 
+#banner button:hover{ 
+  background: #088178; 
+  color: #fcfdfc; 
+} 
+ 
+#sm-banner { 
+  display: flex; 
+  justify-content: space-between; 
+  flex-wrap: nowrap; 
+  } 
+   
+  #sm-banner .banner-box{  
+  display: flex; 
+  flex: 1; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  background-image: url("https://cdn.pixabay.com/photo/2022/10/04/21/25/pink-7499159_1280.jpg"); 
+  min-width: 580px; 
+  height: 58vh; 
+  background-size: cover; 
+  background-position: center; 
+  padding: 20px; 
+  margin: 20px; 
+} 
+#sm-banner .banner-box2{ 
+  background-image: url("https://i.pinimg.com/originals/2b/f5/79/2bf579b22bd79aa8a8113f35fc626a6c.jpg"); 
+  flex: 1; 
+  margin: 20px; 
+} 
+#sm-banner h4{ 
+  color: #d00eda; 
+  font-size: 20px; 
+  font-weight: 300; 
+ 
+} 
+#sm-banner h2{ 
+  color: #ede9ed; 
+  font-size: 60px; 
+  font-weight: 300; 
+  font-style: italic; 
+ 
+} 
+#sm-banner .banner-box2 h2{ 
+  color: #580abe; 
+  font-size: 60px; 
+  font-weight: 300; 
+  font-style: italic; 
+} 
+#sm-banner span{ 
+  color: #d00eda; 
+  font-size: 14px; 
+  font-weight: 500; 
+  padding-bottom: 15px; 
+} 
+#product1 .pro-container { 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap;  
+    gap: 15px;  
+} 
+ 
+#product1 .pro { 
+    width: 23%;  
+    min-width: 250px;  
+    margin: 15px 0;  
+    box-sizing: border-box;  
+   
+    }  
+     
   </style>
 </head>
         <body>
